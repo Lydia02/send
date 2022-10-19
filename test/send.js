@@ -147,12 +147,12 @@ describe('send(file).pipe(res)', function () {
   it('should set Content-Type via mime map', function (done) {
     request(app)
       .get('/name.txt')
-      .expect('Content-Type', 'text/plain; charset=UTF-8')
+      .expect('Content-Type', 'text/plain')
       .expect(200, function (err) {
         if (err) return done(err)
         request(app)
           .get('/tobi.html')
-          .expect('Content-Type', 'text/html; charset=UTF-8')
+          .expect('Content-Type', 'text/html')
           .expect(200, done)
       })
   })
